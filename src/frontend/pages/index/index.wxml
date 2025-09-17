@@ -1,0 +1,52 @@
+<view class="search-bar">
+  <input class="search-input" type="text" placeholder="请输入搜索内容" bindinput="onSearchInput" />
+  <button class="search-button" bindtap="onSearch">搜索</button>
+</view>
+
+
+
+<view>
+  <swiper class="swiper-box" autoplay="true" interval="3000" circular="true" indicator-dots="{{true}}" indicator-active-color="#ffffff">
+    <block wx:for="{{titleList}}" wx:key="index">
+      <view bindtap="onCardTap" data-url="{{item.url}}">
+      <swiper-item>
+        <view class="swiper-item-box">
+          <!-- 标题文本显示 -->
+          <view class="title">{{item.jieshao}}</view>
+          <!-- 图片显示 -->
+          <image class="slide-image" src="{{item.fengmian}}" mode="aspectFill"></image>
+          <!-- 时间显示在右下方 -->
+          <view class="time">{{item.time}}</view>
+        </view>
+      </swiper-item>
+      </view>
+    </block>
+  </swiper>
+</view>
+
+
+<view class="container">
+
+  <block wx:for="{{dataList}}" wx:key="index">
+    <view class="card" bindtap="onCardTap" data-url="{{item.url}}" data-index="{{index}}">
+      <!-- 左边放标题和内容 -->
+      <view class="text-container">
+        <!-- 标题 -->
+        <view class="titles">{{index+1}}. {{item.title}}</view>
+        <!-- 介绍内容 -->
+        <view class="description">{{item.jieshao}}</view>
+        <!-- 时间 -->
+        <view class="times">时间: {{item.time}}</view>
+      </view>
+      
+      <!-- 收藏按钮 -->
+      <button class="favorite-btn" bindtap="toggleFavorite" data-index="{{index}}" wx:if="{{hasUserInfo}}">
+        <text class="favorite-icon">★</text>
+      </button>
+    </view>
+  </block>
+    <button class="back-to-top" wx:if="{{showBackToTop}}" bindtap="scrollToTop">
+      <image class="arrow-icon" src="/image/up-arrow.png" />
+    </button>
+  
+</view>

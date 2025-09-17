@@ -1,0 +1,49 @@
+<view class="container">
+  <!-- Basic Info -->
+  <view class="info-section">
+    <text class="info-title">{{title}}</text>
+    <!-- New container for details -->
+    <view class="info-details">
+      <view class="info-source">{{laiyuan}}</view> <!-- 发布来源 -->
+      <view class="info-time">{{fabutime}}</view> <!-- 发布时间 -->
+    </view>
+  </view>
+
+  <!-- Body Content -->
+  <view class="body-section">
+    <!-- 遍历 order 列表 -->
+    <block wx:for="{{order}}" wx:for-item="key" wx:key="key">
+      <!-- 渲染段落 <p> -->
+      <view wx:if="{{key[0] == 'p'}}" class="paragraph-container">
+        <text class="paragraph">{{'　　' + bodyResult[key]}}</text>
+      </view>
+
+      <!-- 渲染图片 <img> -->
+      <view wx:if="{{key[0] == 'i'}}" class="image-container">
+        <image class="content-image" src="{{bodyResult[key]}}" mode="widthFix" 
+               binderror="onImageError" bindtap="onImageTap" data-src="{{bodyResult[key]}}"></image>
+      </view>
+
+      <!-- 渲染表格 <table> -->
+      <view wx:if="{{key[0] == 't'}}" class="table-container">
+        <view class="table">
+          <!-- 遍历每一行 -->
+          <block wx:for="{{bodyResult[key]}}" wx:for-item="row" wx:key="index">
+            <view class="table-row">
+              <!-- 遍历每一行中的单元格 -->
+              <block wx:for="{{row}}" wx:for-item="cell" wx:key="index">
+                <!-- 渲染每个单元格 -->
+                <text class="table-cell">{{cell}}</text>
+              </block>
+            </view>
+          </block>
+        </view>
+      </view>
+
+      <!-- 渲染嵌套 <div> -->
+      <view wx:if="{{key[0] == 'd'}}" class="subdiv-container">
+        <!-- 可以递归渲染嵌套内容 -->
+      </view>
+    </block>
+  </view>
+</view>

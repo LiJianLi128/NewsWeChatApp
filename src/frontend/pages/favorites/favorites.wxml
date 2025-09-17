@@ -1,0 +1,36 @@
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="page-title">我的收藏</text>
+  </view>
+
+  <!-- 收藏列表 -->
+  <view class="favorites-list">
+    <block wx:if="{{favorites.length > 0}}">
+      <view class="favorite-item" wx:for="{{favorites}}" wx:key="id" bindtap="goToNewsDetail" data-index="{{index}}">
+        <view class="item-content">
+          <text class="item-title">{{item.title}}</text>
+          <view class="item-meta">
+            <text class="item-time">{{item.created_at}}</text>
+            <text class="item-type">{{item.news_type === 'tongzhigonggao' ? '通知公告' : '校园动态'}}</text>
+          </view>
+        </view>
+        <view class="item-action" bindtap="removeFavorite" data-index="{{index}}">
+          <text class="action-text">取消收藏</text>
+        </view>
+      </view>
+    </block>
+    
+    <block wx:else>
+      <view class="empty-container">
+        <image class="empty-icon" src="/image/empty.png" mode="aspectFit"></image>
+        <text class="empty-text">暂无收藏内容</text>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 加载提示 -->
+  <view wx:if="{{loading}}" class="loading-container">
+    <text class="loading-text">加载中...</text>
+  </view>
+</view>

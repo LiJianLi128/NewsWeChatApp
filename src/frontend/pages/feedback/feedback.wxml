@@ -1,0 +1,49 @@
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="page-title">意见反馈</text>
+    <text class="page-subtitle">帮助我们改进产品</text>
+  </view>
+
+  <!-- 反馈表单 -->
+  <view class="feedback-form">
+    <view class="form-item">
+      <text class="form-label">反馈内容 *</text>
+      <textarea class="form-textarea" 
+                placeholder="请输入您的意见或建议..." 
+                value="{{content}}" 
+                bindinput="onContentInput" 
+                maxlength="500">
+      </textarea>
+      <view class="textarea-counter">
+        <text class="counter-text">{{content.length}}/500</text>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">联系方式</text>
+      <input class="form-input" 
+             placeholder="请输入邮箱或手机号（可选）" 
+             value="{{contact}}" 
+             bindinput="onContactInput" />
+    </view>
+
+    <button class="submit-btn" 
+            bindtap="submitFeedback" 
+            disabled="{{submitting}}">
+      {{submitting ? '提交中...' : '提交反馈'}}
+    </button>
+  </view>
+
+  <!-- 提示信息 -->
+  <view class="tips-container">
+    <view class="tip-item">
+      <text class="tip-icon">💡</text>
+      <text class="tip-text">我们会认真阅读每一条反馈，并尽快回复您</text>
+    </view>
+    <view class="tip-item">
+      <text class="tip-icon">🔒</text>
+      <text class="tip-text">您的个人信息将被严格保密</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/list/list",
+    "pages/test/test",
+    "pages/show/show",
+    "pages/show2/show2",
+    "pages/favorites/favorites",
+    "pages/hot/hot",
+    "pages/feedback/feedback"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "城科新闻网",
+    "navigationBarBackgroundColor": "#ffffff",
+    "enablePullDownRefresh": true
+
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#EFEEF3",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "通知公告",
+        "iconPath": "image/index.png",
+        "selectedIconPath": "image/indexhl.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "校园动态",
+        "iconPath": "image/new.png",
+        "selectedIconPath": "image/newhl.png"
+      },
+      {
+        "pagePath": "pages/hot/hot",
+        "text": "热门新闻",
+        "iconPath": "image/hot.png",
+        "selectedIconPath": "image/hot_selected.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的",
+        "iconPath": "image/我的.png",
+        "selectedIconPath": "image/我的l.png"
+      }
+    ]
+  },
+  "debug": false
+}

@@ -1,0 +1,125 @@
+/* pages/feedback/feedback.wxss */
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 页面头部 */
+.page-header {
+  padding: 30rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+
+.page-subtitle {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+/* 反馈表单 */
+.feedback-form {
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.form-label {
+  display: block;
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 15rpx;
+  font-weight: bold;
+}
+
+.form-textarea {
+  width: 100%;
+  height: 200rpx;
+  padding: 20rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  background-color: #fafafa;
+}
+
+.textarea-counter {
+  text-align: right;
+  margin-top: 10rpx;
+}
+
+.counter-text {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.form-input {
+  width: 100%;
+  height: 80rpx;
+  padding: 0 20rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  background-color: #fafafa;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 80rpx;
+  background-color: #00b26a;
+  color: #ffffff;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+  border: none;
+  margin-top: 20rpx;
+}
+
+.submit-btn[disabled] {
+  background-color: #cccccc;
+}
+
+/* 提示信息 */
+.tips-container {
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  padding: 30rpx;
+}
+
+.tip-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.tip-item:last-child {
+  margin-bottom: 0;
+}
+
+.tip-icon {
+  font-size: 36rpx;
+  margin-right: 20rpx;
+}
+
+.tip-text {
+  font-size: 26rpx;
+  color: #666666;
+  flex: 1;
+}

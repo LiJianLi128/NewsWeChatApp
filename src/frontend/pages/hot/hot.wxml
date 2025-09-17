@@ -1,0 +1,42 @@
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="page-title">热门新闻</text>
+    <text class="page-subtitle">浏览量最多的新闻</text>
+  </view>
+
+  <!-- 热门新闻列表 -->
+  <view class="news-list">
+    <block wx:if="{{hotNews.length > 0}}">
+      <view class="news-item" wx:for="{{hotNews}}" wx:key="id" bindtap="goToNewsDetail" data-index="{{index}}">
+        <view class="rank-number" wx:if="{{index < 3}}">
+          <text class="rank-text rank-top">{{index + 1}}</text>
+        </view>
+        <view class="rank-number" wx:else>
+          <text class="rank-text">{{index + 1}}</text>
+        </view>
+        
+        <view class="news-content">
+          <text class="news-title">{{item.title}}</text>
+          <view class="news-meta">
+            <text class="news-time">{{item.time}}</text>
+            <text class="news-type">{{item.type === 'tongzhigonggao' ? '通知公告' : '校园动态'}}</text>
+            <text class="news-views">浏览: {{item.view_count}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    
+    <block wx:else>
+      <view class="empty-container">
+        <image class="empty-icon" src="/image/empty.png" mode="aspectFit"></image>
+        <text class="empty-text">暂无热门新闻</text>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 加载提示 -->
+  <view wx:if="{{loading}}" class="loading-container">
+    <text class="loading-text">加载中...</text>
+  </view>
+</view>
